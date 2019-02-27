@@ -8,7 +8,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.zz.test</groupId>
-	<artifactId>spring-boot-study-base</artifactId>
+	<artifactId>spring-boot-study-demo</artifactId>
 	<version>1.0.0</version>
 	<description>Demo spring-boot-test-master</description>
 
