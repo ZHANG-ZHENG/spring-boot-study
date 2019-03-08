@@ -10,6 +10,7 @@
 		<module>spring-boot-study-config</module>
 		<module>spring-boot-study-junit</module>
 		<module>spring-boot-study-redis-lock</module>
+		<module>spring-boot-my-others</module>
 		<module>study03</module>
     </modules>  
 </project>
