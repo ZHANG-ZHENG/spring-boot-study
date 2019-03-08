@@ -9,6 +9,7 @@
 		<module>spring-boot-study-base</module>  
 		<module>spring-boot-study-config</module>
 		<module>spring-boot-study-junit</module>
+		<module>spring-boot-study-redis-lock</module>
 		<module>study03</module>
     </modules>  
 </project>
