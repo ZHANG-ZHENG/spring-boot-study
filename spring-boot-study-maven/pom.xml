@@ -20,11 +20,6 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.zz.tset</groupId>
-			<artifactId>maventest</artifactId>
-			<version>1.0</version>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
@@ -52,13 +47,8 @@
 	  <repository>
 	    <id>releases</id>
 	    <name>User Project Release</name>
-	    <url>http://114.115.130.246:8081/nexus/content/repositories/releases/</url>
+	    <url>http://182.61.57.136:8081/repository/maven-releases/</url>
 	  </repository>
 	
-	  <snapshotRepository>
-	    <id>snapshots</id>
-	    <name>User Project SNAPSHOTS</name>
-	    <url>http://114.115.130.246:8081/nexus/content/repositories/snapshots/</url>
-	  </snapshotRepository>
 	</distributionManagement>
 </project>

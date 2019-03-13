@@ -1,4 +1,4 @@
-package com;
+package com.lock;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HelloController {
+public class LockController {
 	@Autowired
 	DistributedLockHandler distributedLockHandler;
 
-    @RequestMapping("/test")
+    @RequestMapping("/locktest")
     private String hello() {
     	System.out.println("start service 1");
     	Lock lock=new Lock("redis-lock","my-redis-lock");

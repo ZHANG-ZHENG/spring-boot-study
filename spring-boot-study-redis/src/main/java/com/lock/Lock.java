@@ -1,4 +1,4 @@
-package com;
+package com.lock;
 
 /**
  * 全局锁，包括锁的名称
