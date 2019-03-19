@@ -12,6 +12,7 @@
 		<module>spring-boot-study-redis</module>
 		<module>spring-boot-my-others</module>
 		<module>spring-boot-study-maven</module>
+		<module>spring-boot-shiro</module>
 		<module>study03</module>
     </modules>  
 </project>
