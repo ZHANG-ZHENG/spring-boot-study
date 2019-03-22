@@ -30,9 +30,11 @@ public class TestController {
     
     @RequestMapping("/add")
     public String add(){
-    	
-        
-       
+    	String sql = "select * from user";
+    	List<Map<String, Object>> users =  jdbcTemplate.queryForList(sql);
+    	if(users.size() > 1000){
+    		return "请删除数据再测试";
+    	}
         Long startTime = System.currentTimeMillis();
 
         
