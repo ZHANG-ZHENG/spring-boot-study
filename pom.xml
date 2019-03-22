@@ -13,6 +13,8 @@
 		<module>spring-boot-my-others</module>
 		<module>spring-boot-study-maven</module>
 		<module>spring-boot-shiro</module>
+		<module>spring-boot-study-mongo</module>
+		<module>spring-boot-study-mysql</module>
 		<module>study03</module>
     </modules>  
 </project>
