@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen and (max-width:767px)" href="css/phone.css" />
+	<link rel="stylesheet" type="text/css" media="screen and (min-width:768px)" href="css/style.css" />
+    <title>HTML页面</title>
+</head>
+<body>
+	<div id="app"  >
+		<div>获取openid</div>
+		<div th:text="${key}"></div>
+		<br/>
+		<a href="main2">用户信息测试</a>
+		<br/>
+		<a href="testdb">数据库分片测试</a>
+	</div>
+
+</body>
+</html>
