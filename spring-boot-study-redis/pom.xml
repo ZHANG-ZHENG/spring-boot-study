@@ -7,7 +7,7 @@
 		<version>2.1.2.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.zz.test</groupId>
+	<groupId>top.zhost</groupId>
 	<artifactId>spring-boot-study-redis</artifactId>
 	<version>1.0.0</version>
 

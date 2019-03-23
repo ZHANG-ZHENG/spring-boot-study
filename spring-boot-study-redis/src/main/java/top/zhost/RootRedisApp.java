@@ -1,4 +1,4 @@
-package com;
+package top.zhost;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,4 +9,6 @@ public class RootRedisApp {
     public static void main(String [] args) {
         SpringApplication.run(RootRedisApp.class, args);
     }
+    
+    
 }

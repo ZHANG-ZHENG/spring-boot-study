@@ -1,4 +1,4 @@
-package com.lock;
+package top.zhost.lock;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

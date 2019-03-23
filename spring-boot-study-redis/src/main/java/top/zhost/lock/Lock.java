@@ -1,4 +1,4 @@
-package com.lock;
+package top.zhost.lock;
 
 /**
  * 全局锁，包括锁的名称

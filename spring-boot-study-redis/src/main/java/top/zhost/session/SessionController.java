@@ -1,4 +1,4 @@
-package com.session;
+package top.zhost.session;
 
 
 import java.util.Random;
@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/redis")
+@RequestMapping("/redis/session")
 public class SessionController {
 
-    @RequestMapping("/session/set")
+    @RequestMapping("/set")
     private String set(HttpSession session) {
     	Random r = new Random();
     	int val = r.nextInt(100);
     	session.setAttribute("key", val+"");
     	return val+"";
     }
-    @RequestMapping("/session/get")
+    @RequestMapping("/get")
     private String get(HttpSession session) {
 
     	String val = (String) session.getAttribute("key");
