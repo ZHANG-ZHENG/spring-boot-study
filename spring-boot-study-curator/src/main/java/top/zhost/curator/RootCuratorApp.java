@@ -1,4 +1,4 @@
-package com;
+package top.zhost.curator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

@@ -1,4 +1,4 @@
-package com;
+package top.zhost.curator.lock;
 
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.cache.PathChildrenCache;
@@ -40,8 +40,7 @@ public class DistributedLockByCurator implements InitializingBean{
                 logger.info("success to acquire lock for path:{}", keyPath);
                 break;
             } catch (Exception e) {
-                logger.info("failed to acquire lock for path:{}", keyPath);
-                logger.info("while try again .......");
+                logger.info("failed to acquire lock for path:{} .while try again ...", keyPath);
                 try {
                     if (countDownLatch.getCount() <= 0) {
                         countDownLatch = new CountDownLatch(1);

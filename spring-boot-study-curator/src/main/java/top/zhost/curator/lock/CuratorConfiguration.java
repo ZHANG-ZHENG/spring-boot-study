@@ -1,4 +1,4 @@
-package com;
+package top.zhost.curator.lock;
 
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;

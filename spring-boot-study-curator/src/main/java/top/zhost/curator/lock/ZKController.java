@@ -1,4 +1,4 @@
-package com;
+package top.zhost.curator.lock;
 
 import org.apache.curator.framework.CuratorFramework;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,6 @@ public class ZKController {
 					try {
 						Thread.sleep(1000);
 					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 					distributedLockByCurator.releaseDistributedLock("mylock");
