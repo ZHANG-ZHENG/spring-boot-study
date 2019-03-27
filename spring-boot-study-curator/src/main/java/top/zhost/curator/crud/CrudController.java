@@ -17,6 +17,19 @@ public class CrudController {
     	baseCuratorDao.createPersistentNode("/zktest/p1", "zz nihao a".getBytes());
         return "add";
     }
+ 
+    @RequestMapping(value = "/addt")
+    public String addt() {
+    	String data = "zz nihao "+System.currentTimeMillis();
+    	baseCuratorDao.createEphemeralNode("/zktesttmp/p"+System.currentTimeMillis(), data.getBytes());
+        return "addt";
+    }
+    
+    @RequestMapping(value = "/del")
+    public String del() {
+    	baseCuratorDao.delNode("/zktest/p1", "del".getBytes());
+        return "del";
+    }
     
     @RequestMapping(value = "/set")
     public String set() {
@@ -34,5 +47,10 @@ public class CrudController {
     public String watch() {
     	baseCuratorDao.watch("/zktest/p1");
     	return "watch";
-    }    
+    }  
+    @RequestMapping(value = "/watchall")
+    public String watchall() {
+    	baseCuratorDao.watchAll("/zktest");
+    	return "watchall";
+    }   
 }
