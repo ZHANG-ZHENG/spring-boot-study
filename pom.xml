@@ -18,6 +18,7 @@
 		<module>spring-boot-study-wechat</module>
 		<module>spring-boot-study-curator</module>
 		<module>spring-boot-study-log</module>
+		<module>spring-boot-study-security</module>
 		<module>study03</module>
     </modules>  
 </project>
