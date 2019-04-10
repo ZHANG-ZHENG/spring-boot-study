@@ -11,4 +11,9 @@ public class IndexController {
 
         return "Hello World spring-boot-study-demo!!!";
     }
+    @RequestMapping(value = "/test2")
+    public String index2() {
+
+        return "test2 Hello World spring-boot-study-demo!!!";
+    }
 }
