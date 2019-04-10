@@ -19,6 +19,7 @@
 		<module>spring-boot-study-curator</module>
 		<module>spring-boot-study-log</module>
 		<module>spring-boot-study-security</module>
+		<module>spring-boot-study-elasticsearch</module>
 		<module>study03</module>
     </modules>  
 </project>
