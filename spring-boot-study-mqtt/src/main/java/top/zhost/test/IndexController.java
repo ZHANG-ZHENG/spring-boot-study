@@ -1,4 +1,4 @@
-package com;
+package top.zhost.test;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
