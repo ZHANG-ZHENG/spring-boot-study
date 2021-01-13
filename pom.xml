@@ -21,6 +21,7 @@
 		<module>spring-boot-study-security</module>
 		<module>spring-boot-study-security-vue</module>
 		<module>spring-boot-study-elasticsearch</module>
+		<module>spring-boot-study-sale</module>
 		<module>study03</module>
     </modules>  
 </project>
