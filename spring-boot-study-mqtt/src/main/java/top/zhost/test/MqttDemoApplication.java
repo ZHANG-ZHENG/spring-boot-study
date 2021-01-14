@@ -17,7 +17,7 @@ public class MqttDemoApplication {
 
     private static void test(){
         MqttPushClient.MQTT_HOST = "tcp://zhost.top:1883";
-        MqttPushClient.MQTT_CLIENTID = "client";
+        MqttPushClient.MQTT_CLIENTID = "client"+System.currentTimeMillis();
         //MqttPushClient.MQTT_USERNAME = "username";
         //MqttPushClient.MQTT_PASSWORD = "password";
         MqttPushClient client = MqttPushClient.getInstance();

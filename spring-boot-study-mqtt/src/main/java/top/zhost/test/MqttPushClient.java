@@ -95,6 +95,7 @@ public class MqttPushClient {
             token = mqttTopic.publish(message);
             token.waitForCompletion();
         } catch (Exception e) {
+        	log.error("{}", e);
             e.printStackTrace();
         }
     }
