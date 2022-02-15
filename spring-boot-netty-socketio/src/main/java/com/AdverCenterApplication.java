@@ -40,7 +40,9 @@ public class AdverCenterApplication  {//extends SpringBootServletInitializer
 //    }
 
     public static void main(String[] args) {
-        SpringApplication.run(AdverCenterApplication.class, args);
+        //SpringApplication.run(AdverCenterApplication.class, args);
+    	SpringApplicationBuilder builder = new SpringApplicationBuilder(AdverCenterApplication.class);
+        builder.headless(false).run(args);
         //RobotUtil.getInstance();
     }
 

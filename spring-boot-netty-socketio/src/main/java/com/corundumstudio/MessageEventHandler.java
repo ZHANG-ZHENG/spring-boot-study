@@ -15,11 +15,14 @@ import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
+import java.awt.event.InputEvent;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
 /**
@@ -76,34 +79,53 @@ public class MessageEventHandler {
         System.out.println("发来消息：" + msgContent);
         //服务器端向该客户端发送消息
         //socketIoServer.getClient(client.getSessionId()).sendEvent("messageevent", "你好 data");
-        if(!msgContent.contains("img")) {
-        	client.sendEvent("messageevent","我是服务器发送的信息.");
-        }else {
-        	Robot robot = null;
-			try {
-				robot = new Robot();
-			} catch (AWTException e1) {
-				e1.printStackTrace();
+        if(msgContent.contains("img")) {
+        	Thread t = new Thread() {
+        		@Override
+        		public void run() {
+                	Robot robot = null;
+        			try {
+        				robot = new Robot();
+        			} catch (AWTException e1) {
+        				e1.printStackTrace();
+        			}
+                    //获取屏幕大小
+                    Toolkit toolkit = Toolkit.getDefaultToolkit();
+                    Dimension dm = toolkit.getScreenSize();
+                    while(true){
+                        //一个矩形面板
+                        Rectangle rec = new Rectangle(0, 0, (int)dm.getWidth(), (int)dm.getHeight());
+                        //按照矩形截取图片到缓冲流
+                        BufferedImage img = robot.createScreenCapture(rec);
+//                        //缩放图片
+//                        BufferedImage newImg = RobotScreenTest.resize(img, jframe.getWidth(), jframe.getHeight());
+//                        label.setIcon(new ImageIcon(newImg));
+                        byte[] imfBtyes = imageToBytes(img);
+                        client.sendEvent("imgEvent",imfBtyes);
+                       
+                        try {
+                            Thread.sleep(16);
+                        } catch (InterruptedException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+                    }        			
+        		}
+        	};      	
+        	t.start();
+        }else if(msgContent.contains(",")){
+        	int x = Integer.parseInt(msgContent.split(",")[0]);
+        	int y = Integer.parseInt(msgContent.split(",")[1]);
+        	try {
+				Robot robot = new Robot();
+				robot.mouseMove(x, y);
+				//robot.mousePress(InputEvent.BUTTON1_MASK);
+			} catch (AWTException e) {
+				e.printStackTrace();
 			}
-            //获取屏幕大小
-            Toolkit toolkit = Toolkit.getDefaultToolkit();
-            Dimension dm = toolkit.getScreenSize();
-            //while(true){
-                //一个矩形面板
-                Rectangle rec = new Rectangle(0, 0, (int)dm.getWidth(), (int)dm.getHeight());
-                //按照矩形截取图片到缓冲流
-                BufferedImage img = robot.createScreenCapture(rec);
-//                //缩放图片
-//                BufferedImage newImg = RobotScreenTest.resize(img, jframe.getWidth(), jframe.getHeight());
-//                label.setIcon(new ImageIcon(newImg));
-                client.sendEvent("imgEvent", "111");
-//                try {
-//                    Thread.sleep(500);
-//                } catch (InterruptedException e) {
-//                    // TODO Auto-generated catch block
-//                    e.printStackTrace();
-//                }
-            //}
+        }else {
+        	client.sendEvent("messageevent","我是服务器发送的信息.");        	
+
         }
         
     }
@@ -117,4 +139,14 @@ public class MessageEventHandler {
         }
 
     }
+    private static byte[] imageToBytes(BufferedImage bImage) {
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        try {
+            ImageIO.write(bImage, "png", out);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return out.toByteArray();
+    }
+
 }

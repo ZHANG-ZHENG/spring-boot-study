@@ -7,12 +7,16 @@
   <script src="2.3.1/socket.io.min.js"></script>
  </head>
 <body>
+<div>
+	<img id="image1" src=""  onclick="getMousePos()" />
+</div>
 <h1>Socket.io Test</h1>
 <div><p id="status">Waiting for input</p></div>
 <div><p id="message">hello world!</p></div>
 <button id="connect" onClick='connect()'/>Connect</button>
 <button id="disconnect" onClick='disconnect()'>Disconnect</button>
 <button id="send" onClick='send()'/>Send Message</button>
+<button id="send2" onClick='send2()'/>Send2 Message</button>
 </body>
 
 <script type="text/javascript">
@@ -42,14 +46,16 @@ socket.on('connect', function(){ status_update("Connected to Server"); });
 //监听服务器关闭服务事件
 socket.on('disconnect', function(){ status_update("Disconnected from Server"); });
 //监听服务器端发送消息事件
-    socket.on('messageevent', function(data) { 
-      message(data)
-      //console.log("服务器发送的消息是："+data); 
-    }); 
-    socket.on('imgEvent', function(data) { 
-      message(data)
-      //console.log("服务器发送的消息是："+data); 
-    });
+socket.on('messageevent', function(data) { 
+	message(data)
+}); 
+socket.on('imgEvent', function(data) { 
+	//console.log("received imgEvent data",data);
+	var bytes = data;
+	var blob = new Blob([bytes], { type: "image/png" });
+	var url = URL.createObjectURL(blob);
+	document.getElementById('image1').src = url;	
+});
 //断开连接
 function disconnect() {
     socket.disconnect();
@@ -69,8 +75,23 @@ function esc(msg){
 //点击发送消息触发 
 function send() {   
     //console.log("点击了发送消息，开始向服务器发送消息")
-            var msg = "我很好的,是的．"; 
+            var msg = "test message"; 
             socket.emit('messageevent', {msgContent: msg});  
 }; 
+function send2() {   
+    //console.log("点击了发送消息，开始向服务器发送消息")
+            var msg = "img"; 
+            socket.emit('messageevent', {msgContent: msg});  
+};
+function getMousePos(event) {
+	var e = event || window.event;
+	var scrollX = document.documentElement.scrollLeft || document.body.scrollLeft;
+	var scrollY = document.documentElement.scrollTop || document.body.scrollTop;
+	var x = e.pageX || e.clientX + scrollX;
+	var y = e.pageY || e.clientY + scrollY;
+	console.log("x="+x+",y="+y);
+	var msg = x+","+y; 
+	socket.emit('messageevent', {msgContent: msg});  
+}
 </script>
 </html>
