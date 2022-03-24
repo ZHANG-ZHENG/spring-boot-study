@@ -1,0 +1,16 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /mutil
+spring:
+  datasource:
+    db1: # 数据源1
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/gedu_scp?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver #驱动
+    db2: # 数据源1
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/gedu_scp2?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver #驱动      

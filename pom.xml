@@ -7,21 +7,5 @@
 
 	<modules>  
 		<module>spring-boot-study-base</module>  
-		<module>spring-boot-study-config</module>
-		<module>spring-boot-study-junit</module>
-		<module>spring-boot-study-redis</module>
-		<module>spring-boot-my-others</module>
-		<module>spring-boot-study-maven</module>
-		<module>spring-boot-shiro</module>
-		<module>spring-boot-study-mongo</module>
-		<module>spring-boot-study-mysql</module>
-		<module>spring-boot-study-wechat</module>
-		<module>spring-boot-study-curator</module>
-		<module>spring-boot-study-log</module>
-		<module>spring-boot-study-security</module>
-		<module>spring-boot-study-security-vue</module>
-		<module>spring-boot-study-elasticsearch</module>
-		<module>spring-boot-study-sale</module>
-		<module>study03</module>
     </modules>  
 </project>
