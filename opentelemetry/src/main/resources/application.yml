@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+otel:
+  exporter:
+    otlp:
+      endpoint: "http://zzdev.asia:4317"  # OTLP gRPC 端点
+      protocol: "grpc"                   # 指定协议为 gRPC
+  service:
+    name: "my-spring-boot-app"           # 设置服务名称
+  traces:
+    sampler: "always_on"                 # 设置采样策略（always_on 表示全量采样）
