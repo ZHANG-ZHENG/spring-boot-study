@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class IndexController {
 
+    // http://127.0.0.1:8080/test
     @RequestMapping(value = "/test")
     public String index() {
         return "Hello World spring-boot-study-demo!!!";

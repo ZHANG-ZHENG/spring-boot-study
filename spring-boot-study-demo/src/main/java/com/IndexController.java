@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class IndexController {
 
+    // http://localhost:8080/test
     @RequestMapping(value = "/test")
     public String index() {
 
-        return "Hello World spring-boot-study-demo!!!";
+        return "Hello World demo!!!";
     }
 }

@@ -5,7 +5,8 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-	<modules>  
-		<module>spring-boot-study-base</module>  
+	<modules>
+        <module>spring-boot-study-demo</module>
+        <module>opentelemetry</module>
     </modules>  
 </project>
