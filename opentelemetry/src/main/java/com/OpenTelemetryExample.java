@@ -2,17 +2,24 @@ package com;
 
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
+import io.opentelemetry.sdk.resources.Resource;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.export.BatchSpanProcessor;
 import io.opentelemetry.exporter.otlp.trace.OtlpGrpcSpanExporter;
+import io.opentelemetry.semconv.ResourceAttributes;
 
 public class OpenTelemetryExample {
 
+    public static OpenTelemetry instance = null;
     // 初始化 OpenTelemetry
-    private static OpenTelemetry initOpenTelemetry() {
+    public static OpenTelemetry initOpenTelemetry() {
+        if (instance!=null) {
+            return instance;
+        }
         // 配置 OTLP 导出器，默认会发送到 localhost:4317
         OtlpGrpcSpanExporter otlpExporter = OtlpGrpcSpanExporter.builder()
                 .setEndpoint("http://ruijie.asia:4317") // 设置你的 Collector 的地址
@@ -22,16 +29,22 @@ public class OpenTelemetryExample {
         BatchSpanProcessor spanProcessor = BatchSpanProcessor.builder(otlpExporter)
                 .build();
 
+        Resource resource = Resource.getDefault()
+                .merge(Resource.create(Attributes.of(
+                        ResourceAttributes.SERVICE_NAME, "serviceNamezzz",
+                        ResourceAttributes.TELEMETRY_SDK_LANGUAGE, "java")));
+
         // 创建 Tracer Provider 并添加 Span Processor
         SdkTracerProvider tracerProvider = SdkTracerProvider.builder()
                 .addSpanProcessor(spanProcessor)
+                .setResource(resource)
                 .build();
 
         // 创建 OpenTelemetry 实例
         OpenTelemetrySdk openTelemetry = OpenTelemetrySdk.builder()
                 .setTracerProvider(tracerProvider)
                 .buildAndRegisterGlobal();
-
+        instance = openTelemetry;
         return openTelemetry;
     }
 

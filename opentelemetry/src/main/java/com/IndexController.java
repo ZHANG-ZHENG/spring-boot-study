@@ -1,5 +1,6 @@
 package com;
 
+import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.Tracer;
@@ -13,66 +14,32 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class IndexController {
 
+
     // http://127.0.0.1:8080/test
     @RequestMapping(value = "/test")
     public String index() {
         return "Hello World spring-boot-study-demo!!!";
     }
 
+
+    // http://127.0.0.1:8080/test2
     @RequestMapping(value = "/test2")
     public String test2() {
-        // 初始化 OpenTelemetry
-        OpenTelemetry openTelemetry = initOpenTelemetry();
-
-        // 获取一个 Tracer
-        Tracer tracer = openTelemetry.getTracer("zzz-tracer");
-
         // 创建一个 Span
-        Span span = tracer.spanBuilder("zzz-span").startSpan();
-
-        // 添加属性
-        span.setAttribute("zzz-attribute", "zzzvalue");
-
-        // 模拟一些操作
-        doSomeWork();
-
-        // 结束 Span
-        span.end();
-
-        // 确保所有 Span 数据都已发送到 Collector
-        // OpenTelemetrySdk.getGlobalTracerManagement().shutdown();
-        System.out.println("finish");
-        return "Hello World2";
-    }
-
-    private static OpenTelemetry initOpenTelemetry() {
-        // 配置 OTLP 导出器，默认会发送到 localhost:4317
-        OtlpGrpcSpanExporter otlpExporter = OtlpGrpcSpanExporter.builder()
-                .setEndpoint("http://ruijie.asia:4317") // 设置你的 Collector 的地址
-                .build();
-
-        // 创建一个 BatchSpanProcessor
-        BatchSpanProcessor spanProcessor = BatchSpanProcessor.builder(otlpExporter)
-                .build();
-
-        // 创建 Tracer Provider 并添加 Span Processor
-        SdkTracerProvider tracerProvider = SdkTracerProvider.builder()
-                .addSpanProcessor(spanProcessor)
-                .build();
-
-        // 创建 OpenTelemetry 实例
-        OpenTelemetrySdk openTelemetry = OpenTelemetrySdk.builder()
-                .setTracerProvider(tracerProvider)
-                .buildAndRegisterGlobal();
-
-        return openTelemetry;
-    }
-
-    private static void doSomeWork() {
+        OpenTelemetry openTelemetry = OpenTelemetryExample.initOpenTelemetry();
+        Tracer tracer = openTelemetry.getTracer("example-tracerz");
+        Span span = tracer.spanBuilder("hello-span").startSpan();
         try {
-            Thread.sleep(1000); // 模拟 1 秒的工作
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
+            // 在 Span 中记录数据
+            span.setAttribute("example-attribute", "valuezzzzz" + System.currentTimeMillis());
+            span.addEvent("Processing /hello request");
+
+            // 模拟一些业务逻辑
+            return "Hello, OpenTelemetry!";
+        } finally {
+            // 结束 Span
+            span.end();
         }
     }
+
 }
