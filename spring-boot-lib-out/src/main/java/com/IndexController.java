@@ -11,6 +11,6 @@ public class IndexController {
     @RequestMapping(value = "/test")
     public String index() {
 
-        return "Hello World demo!!!";
+        return "Hello World Lib Out!";
     }
 }
