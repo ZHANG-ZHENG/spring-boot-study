@@ -7,9 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class RootApplication {
 
     /**
-     * java -cp "target/lib-out-1.0.0.jar;target/libs/*" org.springframework.boot.loader.JarLauncher
-     * java -cp "lib-out-1.0.0.jar;libs/*" org.springframework.boot.loader.JarLauncher
-     * java -jar lib-out-1.0.0.jar --classpath=libs/*
+     * java -cp lib-out-1.0.0.jar;libs/* org.springframework.boot.loader.JarLauncher
+     * java -Dloader.path=./libs -jar lib-out-1.0.0.jar
      * @param args
      */
     public static void main(String [] args) {

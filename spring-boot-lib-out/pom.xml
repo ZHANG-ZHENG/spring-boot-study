@@ -14,7 +14,6 @@
 	<version>1.0.0</version>
 
 	<properties>
-		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -38,8 +37,8 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<!--<mainClass>com.RootApplication</mainClass>-->
-					<layout>ZIP</layout> <!-- 禁用默认的FAT JAR打包 -->
+					<!-- 禁用默认的FAT JAR打包 -->
+					<layout>ZIP</layout>
 					<includes>
 						<include>
 							<groupId>nothing</groupId>
@@ -47,13 +46,13 @@
 						</include>
 					</includes>
 				</configuration>
-				<executions>
+				<!--<executions>
 					<execution>
 						<goals>
 							<goal>repackage</goal>
 						</goals>
 					</execution>
-				</executions>
+				</executions>-->
 			</plugin>
 
 			<!-- 复制依赖到libs目录 -->
@@ -75,6 +74,19 @@
 					</execution>
 				</executions>
 			</plugin>
+
+			<!--<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>libs/</classpathPrefix>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>-->
 		</plugins>
 	</build>
 
