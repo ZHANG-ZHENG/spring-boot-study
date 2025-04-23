@@ -13,7 +13,7 @@ public class GrpcClient {
 
     public static void main(String[] args) {
         // 1. 创建Channel
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9090)
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051)
                 .usePlaintext() // 开发环境使用，生产环境应使用TLS
                 .build();
 

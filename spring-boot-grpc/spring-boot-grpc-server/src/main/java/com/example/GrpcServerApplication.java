@@ -7,6 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class GrpcServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(GrpcServerApplication.class, args);
-        System.out.println("gRPC server started on port 9090");
+        System.out.println("gRPC server started on port 50051");
     }
 }
