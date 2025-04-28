@@ -1,0 +1,8 @@
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-store-type: JKS
+    key-store: classpath:zsite.asia.jks
+    key-store-password: rll8r37zo66644
+    key-alias: zsite.asia
