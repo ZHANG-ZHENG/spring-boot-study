@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
- * docker run -d  -v /build/spring-boot-study-demo/:/usr/local/app -p 443:8443 --name demo-test moxm/java:1.8-full  java -jar -server -Xms64M -Xmx256M /usr/local/app/demo-https-1.0.0.jar
+ * docker run -d  -v /build/spring-boot-study-demo/:/usr/local/app -p 443:8443 --name demo-test-s moxm/java:1.8-full  java -jar -server -Xms64M -Xmx256M /usr/local/app/demo-https-1.0.0.jar
  */
 @RestController
 @RequestMapping("/demo")

@@ -1,4 +1,10 @@
 grpc:
   server:
-    port: 50051
+    port: 3000
     address: 0.0.0.0
+  security:
+    enabled: true
+    key-store-type: JKS
+    key-store: classpath:server.jks
+    key-store-password: rll8r37zo66644
+    key-alias: zsite.asia
