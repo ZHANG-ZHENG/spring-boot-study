@@ -13,7 +13,7 @@ import java.util.*;
 @RequestMapping("/demo")
 public class IndexController {
 
-    // http://localhost:8080/demo/test
+    // http://localhost:3000/demo/test
     @RequestMapping(value = "/test")
     public Map<String, Object> test(String query) {
         SimpleDateFormat sdf = new SimpleDateFormat("MMddHHmmss");
@@ -25,7 +25,7 @@ public class IndexController {
         return result;
     }
 
-    // http://localhost:8080/demo/query/baidu.com
+    // http://localhost:3000/demo/query/baidu.com
     @GetMapping("/query/{query}")
     public Map<String, Object> test2(@PathVariable String query) {
         SimpleDateFormat sdf = new SimpleDateFormat("MMddHHmmss");

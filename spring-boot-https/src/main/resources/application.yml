@@ -6,3 +6,7 @@ server:
     key-store: classpath:zsite.asia.jks
     key-store-password: rll8r37zo66644
     key-alias: zsite.asia
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json,application/xml
+    min-response-size: 1024000000

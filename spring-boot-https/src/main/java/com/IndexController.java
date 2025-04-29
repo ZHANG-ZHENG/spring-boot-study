@@ -15,7 +15,9 @@ import java.util.*;
 @RequestMapping("/demo")
 public class IndexController {
 
-    // http://localhost:8443/demo/test
+    private static final String ALPHA_NUMERIC = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    // https://localhost:8443/demo/test
     @RequestMapping(value = "/test")
     public Map<String, Object> test(String query) {
         SimpleDateFormat sdf = new SimpleDateFormat("MMddHHmmss");
@@ -27,7 +29,7 @@ public class IndexController {
         return result;
     }
 
-    // http://localhost:8080/demo/query/baidu.com
+    // https://localhost:8080/demo/query/baidu.com
     @GetMapping("/query/{query}")
     public Map<String, Object> test2(@PathVariable String query) {
         SimpleDateFormat sdf = new SimpleDateFormat("MMddHHmmss");
@@ -36,6 +38,29 @@ public class IndexController {
         Map<String, Object> result = new HashMap<>();
         result.put("query", query);
         result.put("result", sdf.format(now));
+        return result;
+    }
+
+    // https://localhost:8443/demo/size?size=10&fix=a
+    @RequestMapping(value = "/size")
+    public Map<String, Object> size(Long size, String fix) {
+        SimpleDateFormat sdf = new SimpleDateFormat("MMddHHmmss");
+        Date now = new Date();
+
+        Map<String, Object> result = new HashMap<>();
+
+        result.put("result", sdf.format(now));
+        StringBuilder sb = new StringBuilder();
+        Random r = new Random();
+        for(int i=0; i<size; i++){
+            if (fix != null ){
+                sb.append(fix);
+            } else {
+                int index = r.nextInt(ALPHA_NUMERIC.length());
+                sb.append(ALPHA_NUMERIC.charAt(index));
+            }
+        }
+        result.put("query", sb.toString());
         return result;
     }
 }
