@@ -12,8 +12,10 @@ public class GrpcClient {
     private static final Logger logger = LoggerFactory.getLogger(GrpcClient.class);
 
     public static void main(String[] args) {
+        String address = "localhost";
+        address = "zsite.asia";
         // 1. 创建Channel
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 3000)
+        ManagedChannel channel = ManagedChannelBuilder.forAddress(address, 3000)
                 .usePlaintext() // 开发环境使用，生产环境应使用TLS
                 .build();
 
@@ -23,7 +25,7 @@ public class GrpcClient {
 
             // 3. 准备请求
             HelloRequest request = HelloRequest.newBuilder()
-                    .setName("Java gRPC Client")
+                    .setName("Client Test")
                     .build();
 
             // 4. 发送RPC请求
