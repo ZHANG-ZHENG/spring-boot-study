@@ -3,7 +3,7 @@
 // source: hello.proto
 // Protobuf Java Version: 4.30.1
 
-package com.example.grpc;
+package com.test.grpc;
 
 public interface HelloReplyOrBuilder extends
     // @@protoc_insertion_point(interface_extends:hello.HelloReply)

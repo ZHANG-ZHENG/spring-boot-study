@@ -24,7 +24,7 @@ hello.proto 内容：
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "com.example.grpc";
+option java_package = "com.test.grpc";
 option java_outer_classname = "HelloProto";
 
 package hello;

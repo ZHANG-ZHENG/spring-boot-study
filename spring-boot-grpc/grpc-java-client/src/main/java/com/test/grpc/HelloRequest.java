@@ -3,7 +3,7 @@
 // source: hello.proto
 // Protobuf Java Version: 4.30.1
 
-package com.example.grpc;
+package com.test.grpc;
 
 /**
  * Protobuf type {@code hello.HelloRequest}
@@ -32,15 +32,15 @@ private static final long serialVersionUID = 0L;
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.example.grpc.HelloProto.internal_static_hello_HelloRequest_descriptor;
+    return com.test.grpc.HelloProto.internal_static_hello_HelloRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.example.grpc.HelloProto.internal_static_hello_HelloRequest_fieldAccessorTable
+    return com.test.grpc.HelloProto.internal_static_hello_HelloRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.example.grpc.HelloRequest.class, com.example.grpc.HelloRequest.Builder.class);
+            com.test.grpc.HelloRequest.class, com.test.grpc.HelloRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -121,10 +121,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.example.grpc.HelloRequest)) {
+    if (!(obj instanceof com.test.grpc.HelloRequest)) {
       return super.equals(obj);
     }
-    com.example.grpc.HelloRequest other = (com.example.grpc.HelloRequest) obj;
+    com.test.grpc.HelloRequest other = (com.test.grpc.HelloRequest) obj;
 
     if (!getName()
         .equals(other.getName())) return false;
@@ -146,44 +146,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.example.grpc.HelloRequest parseFrom(
+  public static com.test.grpc.HelloRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.grpc.HelloRequest parseFrom(
+  public static com.test.grpc.HelloRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.grpc.HelloRequest parseFrom(
+  public static com.test.grpc.HelloRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.grpc.HelloRequest parseFrom(
+  public static com.test.grpc.HelloRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.grpc.HelloRequest parseFrom(byte[] data)
+  public static com.test.grpc.HelloRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.grpc.HelloRequest parseFrom(
+  public static com.test.grpc.HelloRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.grpc.HelloRequest parseFrom(java.io.InputStream input)
+  public static com.test.grpc.HelloRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.grpc.HelloRequest parseFrom(
+  public static com.test.grpc.HelloRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -191,26 +191,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.example.grpc.HelloRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.test.grpc.HelloRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.example.grpc.HelloRequest parseDelimitedFrom(
+  public static com.test.grpc.HelloRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.grpc.HelloRequest parseFrom(
+  public static com.test.grpc.HelloRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.grpc.HelloRequest parseFrom(
+  public static com.test.grpc.HelloRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -223,7 +223,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.example.grpc.HelloRequest prototype) {
+  public static Builder newBuilder(com.test.grpc.HelloRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -244,18 +244,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:hello.HelloRequest)
-      com.example.grpc.HelloRequestOrBuilder {
+      com.test.grpc.HelloRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.grpc.HelloProto.internal_static_hello_HelloRequest_descriptor;
+      return com.test.grpc.HelloProto.internal_static_hello_HelloRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.grpc.HelloProto.internal_static_hello_HelloRequest_fieldAccessorTable
+      return com.test.grpc.HelloProto.internal_static_hello_HelloRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.grpc.HelloRequest.class, com.example.grpc.HelloRequest.Builder.class);
+              com.test.grpc.HelloRequest.class, com.test.grpc.HelloRequest.Builder.class);
     }
 
     // Construct using com.example.grpc.HelloRequest.newBuilder()
@@ -279,17 +279,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.example.grpc.HelloProto.internal_static_hello_HelloRequest_descriptor;
+      return com.test.grpc.HelloProto.internal_static_hello_HelloRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.example.grpc.HelloRequest getDefaultInstanceForType() {
-      return com.example.grpc.HelloRequest.getDefaultInstance();
+    public com.test.grpc.HelloRequest getDefaultInstanceForType() {
+      return com.test.grpc.HelloRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.example.grpc.HelloRequest build() {
-      com.example.grpc.HelloRequest result = buildPartial();
+    public com.test.grpc.HelloRequest build() {
+      com.test.grpc.HelloRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -297,14 +297,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.example.grpc.HelloRequest buildPartial() {
-      com.example.grpc.HelloRequest result = new com.example.grpc.HelloRequest(this);
+    public com.test.grpc.HelloRequest buildPartial() {
+      com.test.grpc.HelloRequest result = new com.test.grpc.HelloRequest(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(com.example.grpc.HelloRequest result) {
+    private void buildPartial0(com.test.grpc.HelloRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
@@ -313,16 +313,16 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.example.grpc.HelloRequest) {
-        return mergeFrom((com.example.grpc.HelloRequest)other);
+      if (other instanceof com.test.grpc.HelloRequest) {
+        return mergeFrom((com.test.grpc.HelloRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.example.grpc.HelloRequest other) {
-      if (other == com.example.grpc.HelloRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.test.grpc.HelloRequest other) {
+      if (other == com.test.grpc.HelloRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         bitField0_ |= 0x00000001;
@@ -452,12 +452,12 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:hello.HelloRequest)
-  private static final com.example.grpc.HelloRequest DEFAULT_INSTANCE;
+  private static final com.test.grpc.HelloRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.example.grpc.HelloRequest();
+    DEFAULT_INSTANCE = new com.test.grpc.HelloRequest();
   }
 
-  public static com.example.grpc.HelloRequest getDefaultInstance() {
+  public static com.test.grpc.HelloRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -493,7 +493,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public com.example.grpc.HelloRequest getDefaultInstanceForType() {
+  public com.test.grpc.HelloRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

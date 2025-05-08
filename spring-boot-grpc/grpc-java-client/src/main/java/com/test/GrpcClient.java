@@ -1,8 +1,8 @@
-package com.example;
+package com.test;
 
-import com.example.grpc.GreeterGrpc;
-import com.example.grpc.HelloRequest;
-import com.example.grpc.HelloReply;
+import com.test.grpc.GreeterGrpc;
+import com.test.grpc.HelloRequest;
+import com.test.grpc.HelloReply;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.slf4j.Logger;
@@ -13,7 +13,8 @@ public class GrpcClient {
 
     public static void main(String[] args) {
         String address = "localhost";
-        address = "zsite.asia";
+        //String address = "zsite.asia";
+        //String address = "esa-rq.zsite.asia";
         // 1. 创建Channel
         ManagedChannel channel = ManagedChannelBuilder.forAddress(address, 3000)
                 .usePlaintext() // 开发环境使用，生产环境应使用TLS
