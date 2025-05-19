@@ -1,8 +1,7 @@
 package com.test;
 
 import com.test.grpc.GreeterGrpc;
-import com.test.grpc.HelloRequest;
-import com.test.grpc.HelloReply;
+import com.test.grpc.HelloProto;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.slf4j.Logger;
@@ -25,13 +24,13 @@ public class GrpcClient {
             GreeterGrpc.GreeterBlockingStub blockingStub = GreeterGrpc.newBlockingStub(channel);
 
             // 3. 准备请求
-            HelloRequest request = HelloRequest.newBuilder()
-                    .setName("Client Test")
+            HelloProto.HelloRequest request = HelloProto.HelloRequest.newBuilder()
+                    .setName("Client Test z")
                     .build();
 
             // 4. 发送RPC请求
             logger.info("Sending request to server...");
-            HelloReply response = blockingStub.sayHello(request);
+            HelloProto.HelloReply response = blockingStub.sayHello(request);
 
             // 5. 处理响应
             logger.info("Received response: " + response.getMessage());
