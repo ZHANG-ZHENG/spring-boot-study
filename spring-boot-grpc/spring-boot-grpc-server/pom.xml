@@ -8,7 +8,7 @@
 		<version>2.7.14</version>
 	</parent>
 
-	<groupId>com.xcbeyond.springboot.grpc.server</groupId>
+	<groupId>com.test.grpc</groupId>
 	<artifactId>spring-boot-grpc-server</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0</version>
